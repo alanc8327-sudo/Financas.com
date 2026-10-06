@@ -2,6 +2,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0; padding: 0;
   background: #f4f6f8;
+  color: #333;
 }
 
 header {
@@ -15,7 +16,7 @@ nav {
   margin-top: 1rem;
 }
 
-.aba {
+.aba, #toggleDark {
   background: #27ae60;
   color: white;
   border: none;
@@ -26,7 +27,7 @@ nav {
   transition: background 0.3s ease, transform 0.2s ease;
 }
 
-.aba:hover {
+.aba:hover, #toggleDark:hover {
   background: #2ecc71;
   transform: scale(1.05);
 }
@@ -107,4 +108,79 @@ tbody tr:hover { background: #eaf2f8; }
   border: 1px solid #ccc;
   border-radius: 6px;
   margin: 0.3rem;
+}
+
+/* 🌙 Dark Mode */
+body.dark-mode {
+  background: #1e1e1e;
+  color: #f4f4f4;
+}
+
+body.dark-mode header {
+  background: linear-gradient(135deg, #111, #333);
+}
+
+body.dark-mode .card {
+  background: #2c2c2c;
+  color: #f4f4f4;
+}
+
+body.dark-mode table {
+  background: #2c2c2c;
+  color: #f4f4f4;
+}
+
+body.dark-mode th, 
+body.dark-mode td {
+  border: 1px solid #555;
+}
+
+body.dark-mode tbody tr:nth-child(even) { 
+  background: #333; 
+}
+body.dark-mode tbody tr:hover { 
+  background: #444; 
+}
+
+body.dark-mode input, 
+body.dark-mode select {
+  background: #2c2c2c;
+  color: #f4f4f4;
+  border: 1px solid #555;
+}
+
+body.dark-mode input:focus, 
+body.dark-mode select:focus {
+  border-color: #27ae60;
+  outline: none;
+}
+
+body.dark-mode button {
+  background: linear-gradient(135deg, #444, #666);
+  color: #f4f4f4;
+}
+
+body.dark-mode button:hover {
+  background: linear-gradient(135deg, #666, #444);
+}
+
+body.dark-mode .excluir {
+  background: #c0392b;
+}
+body.dark-mode .excluir:hover {
+  background: #a93226;
+}
+
+body.dark-mode #relatorios label {
+  color: #f4f4f4;
+}
+
+body.dark-mode #graficoMensal,
+body.dark-mode #graficoPizza,
+body.dark-mode #graficoLinha,
+body.dark-mode #graficoEvolucao,
+body.dark-mode #graficoSaldo {
+  background: #2c2c2c;
+  border-radius: 8px;
+  padding: 1rem;
 }
