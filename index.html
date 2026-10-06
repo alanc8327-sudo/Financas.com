@@ -18,6 +18,7 @@
       <button class="aba" onclick="mostrarAba('historico')">Histórico</button>
       <button class="aba" onclick="mostrarAba('graficos')">Gráficos</button>
       <button class="aba" onclick="mostrarAba('relatorios')">Relatórios</button>
+      <button id="toggleDark">🌙 Modo Escuro</button>
     </nav>
   </header>
 
@@ -53,41 +54,48 @@
       <canvas id="graficoMensal"></canvas>
       <canvas id="graficoPizza"></canvas>
       <canvas id="graficoLinha"></canvas>
+      <canvas id="graficoEvolucao"></canvas>
+      <canvas id="graficoSaldo"></canvas>
     </section>
 
     <section id="relatorios" class="aba-conteudo">
+      <label for="mes">Mês:</label>
+      <select id="mes">
+        <option value="1">Janeiro</option>
+        <option value="2">Fevereiro</option>
+        <option value="3">Março</option>
+        <option value="4">Abril</option>
+        <option value="5">Maio</option>
+        <option value="6">Junho</option>
+        <option value="7">Julho</option>
+        <option value="8">Agosto</option>
+        <option value="9">Setembro</option>
+        <option value="10">Outubro</option>
+        <option value="11">Novembro</option>
+        <option value="12">Dezembro</option>
+      </select>
+
+      <label for="ano">Ano:</label>
+      <input type="number" id="ano" value="2026" min="2000" max="2100">
+
+      <button onclick="filtrarPorMes()">Filtrar</button>
       <button onclick="gerarPDF()">Gerar PDF</button>
       <button onclick="gerarPlanilha()">Gerar Planilha</button>
     </section>
-
-
-  <section id="relatorios" class="aba-conteudo">
-  <label for="mes">Mês:</label>
-  <select id="mes">
-    <option value="1">Janeiro</option>
-    <option value="2">Fevereiro</option>
-    <option value="3">Março</option>
-    <option value="4">Abril</option>
-    <option value="5">Maio</option>
-    <option value="6">Junho</option>
-    <option value="7">Julho</option>
-    <option value="8">Agosto</option>
-    <option value="9">Setembro</option>
-    <option value="10">Outubro</option>
-    <option value="11">Novembro</option>
-    <option value="12">Dezembro</option>
-  </select>
-
-  <label for="ano">Ano:</label>
-  <input type="number" id="ano" value="2026" min="2000" max="2100">
-
-  <button onclick="filtrarPorMes()">Filtrar</button>
-  <button onclick="gerarPDF()">Gerar PDF</button>
-  <button onclick="gerarPlanilha()">Gerar Planilha</button>
-</section>
   </main>
 
-  
- <script src="script.js"></script>
+  <script src="script.js"></script>
+  <script>
+    // Alternar modo escuro
+    document.getElementById("toggleDark").addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+      const btn = document.getElementById("toggleDark");
+      if (document.body.classList.contains("dark-mode")) {
+        btn.textContent = "☀️ Modo Claro";
+      } else {
+        btn.textContent = "🌙 Modo Escuro";
+      }
+    });
+  </script>
 </body>
 </html>
